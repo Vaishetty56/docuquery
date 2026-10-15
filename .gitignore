@@ -1,0 +1,35 @@
+# Secrets: NEVER commit these
+.env
+*.key
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# Generated artifacts: rebuilt by running ingestion
+data/index/*
+!data/index/.gitkeep
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Local document corpus
+data/pdfs/
+data/documents/
+*.pdf
+
+# Generated Python package metadata
+src/*.egg-info/
+
+# Internal evaluation drafts and review artifacts
+eval/CLAUDE_CHECK_REPORT.md
+eval/questions.draft.jsonl
+eval/rejected_ids.txt
+eval/review.py
+eval/draft_questions.py
+eval/make_bullets.py

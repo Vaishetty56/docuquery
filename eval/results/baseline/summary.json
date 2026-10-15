@@ -1,0 +1,80 @@
+{
+  "run_name": "baseline",
+  "config": {
+    "embed_model": "gemini-embedding-001",
+    "gen_model": "gemini-3.1-flash-lite",
+    "judge_model": "gemini-3.5-flash",
+    "chunk_size": 1000,
+    "chunk_overlap": 200,
+    "top_k": 5,
+    "pool": 20,
+    "hybrid": false,
+    "rerank": false,
+    "rewrite": false,
+    "verified_labels_only": true,
+    "n_chunks_indexed": 1336,
+    "run_at_utc": "2026-10-13T10:34:34+00:00"
+  },
+  "metrics": {
+    "n_questions": 29,
+    "n_errors": 9,
+    "n_answerable": 14,
+    "n_unanswerable": 6,
+    "retrieval_hit": {
+      "@1": {
+        "num": 7,
+        "den": 14,
+        "rate": 0.5
+      },
+      "@3": {
+        "num": 9,
+        "den": 14,
+        "rate": 0.6428571428571429
+      },
+      "@5": {
+        "num": 9,
+        "den": 14,
+        "rate": 0.6428571428571429
+      }
+    },
+    "retrieval_full_hit_multipage": {
+      "@1": {
+        "num": 0,
+        "den": 0,
+        "rate": null
+      },
+      "@3": {
+        "num": 0,
+        "den": 0,
+        "rate": null
+      },
+      "@5": {
+        "num": 0,
+        "den": 0,
+        "rate": null
+      }
+    },
+    "correct_answerable": {
+      "num": 12,
+      "den": 14,
+      "rate": 0.8571428571428571
+    },
+    "correct_abstention_on_unanswerable": {
+      "num": 6,
+      "den": 6,
+      "rate": 1.0
+    },
+    "faithfulness_of_given_answers": {
+      "num": 12,
+      "den": 13,
+      "rate": 0.9230769230769231
+    },
+    "judge_failures": 0,
+    "rerank_failures": 0,
+    "overall_correct": {
+      "num": 18,
+      "den": 20,
+      "rate": 0.9
+    }
+  }
+}

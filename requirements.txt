@@ -1,0 +1,9 @@
+# Pinned to the versions available on PyPI on 2026-10-04.
+google-genai==2.28.0     # Gemini API client (embeddings + generation)
+faiss-cpu==1.15.1        # vector index
+numpy==2.5.3             # vectors are numpy arrays
+pypdf==6.19.0            # PDF text extraction, page by page
+streamlit==1.65.0        # web UI
+rank-bm25==0.2.2         # keyword search for hybrid retrieval (Phase 9)
+python-dotenv==1.2.4     # loads .env into environment variables
+pytest==9.1.1            # tests
