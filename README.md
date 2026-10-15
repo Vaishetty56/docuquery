@@ -44,7 +44,43 @@ python eval/report.py table baseline hybrid hybrid_rerank hybrid_rerank_rewrite 
 ```
 
 ## Results
-Generated from `eval/results/*/summary.json`. **No results yet: the evaluation has not been run.**
+## Evaluation Results
+
+DocuQuery was evaluated using a 29-question test set to examine retrieval quality, answer correctness, faithfulness, and abstention behavior.
+
+Two configurations were run:
+
+- **Baseline:** Vector-based retrieval.
+- **Hybrid:** Vector retrieval combined with BM25 keyword search using Reciprocal Rank Fusion (RRF).
+
+### Results Summary
+
+| Metric | Baseline | Hybrid |
+|---|---:|---:|
+| Questions evaluated successfully | 20/29 | 12/29 |
+| Overall correctness on successful rows | 18/20 (90%) | 10/12 (83.3%) |
+| Retrieval Hit@1 | 7/14 (50%) | 2/6 (33.3%) |
+| Retrieval Hit@3 | 9/14 (64.3%) | 3/6 (50%) |
+| Retrieval Hit@5 | 9/14 (64.3%) | 3/6 (50%) |
+| Correct abstention | 6/6 (100%) | 6/6 (100%) |
+| Faithfulness | 12/13 (92.3%) | 4/5 (80%) |
+| Questions with evaluation errors | 9/29 | 17/29 |
+
+### Findings
+
+- The baseline had higher observed overall correctness than hybrid retrieval on the successfully evaluated rows.
+- Both configurations correctly abstained on all six successfully evaluated unanswerable questions.
+- The hybrid run encountered more evaluation errors, leaving fewer successful results for comparison.
+- These results are preliminary. Because the number of successful rows differs between configurations and many questions errored, they do not establish that one retrieval strategy is definitively better.
+
+### Limitations
+
+- The test set is small.
+- Evaluation errors reduced the number of usable results.
+- Correctness and faithfulness were assessed using an LLM judge and may contain judgment errors.
+- Retrieval and generation parameters have not been systematically tuned on a separate held-out test set.
+
+The raw evaluation outputs and summaries are available in [`eval/results/`](eval/results/). See [`eval/README.md`](eval/README.md) for evaluation details.
 <!-- RESULTS:START -->
 _Not run yet._
 <!-- RESULTS:END -->
